@@ -28,3 +28,9 @@
 
 - 그리고 GlobalStyle 몇개 추가함
 
+#5 Frontend: Authorization Routes
+
+#5.0 Auth Route UI part One
+
+- Auth 페이지를 조금 만들었다
+- react hooks 를 쓰면 기존보다 좋다는데 useState 를 사용했다 아직까지는 뭐가좋은지 잘 모르겠다
