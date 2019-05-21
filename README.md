@@ -45,3 +45,11 @@
 - Button 과 Input 컴포넌트를 만들었다
 - 그걸 Auth 에 추가하였다
 - 특별한 건 없었음
+
+#5.3 Auth Form with Hooks
+
+- Input 에 Props 를 세개 추가했는데 그 중 value, onChange 를 useInput 에 구현해서 넣어줌
+- 이게 확실히 hooks 를 쓰니까 간결해 보이는데 아직까진 적응이 안되는 중
+
+- type Prop 도 추가하니 password, email type 정말 간편하게 설정가능하네
+- 기존의 react 를 잘 모르니 나아진점을 모르는 거 일수도 있음, 기존이 더 깔끔해보이는데 나는
