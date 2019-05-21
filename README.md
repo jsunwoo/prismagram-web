@@ -39,3 +39,9 @@
 #5.1 Footer and Auth UI part Two
 
 - Footer 를 추가했고, hooks 를 써서 state 에 따라 변하는 Auth 를 만듦
+
+#5.2 Footer and Auth UI part Three
+
+- Button 과 Input 컴포넌트를 만들었다
+- 그걸 Auth 에 추가하였다
+- 특별한 건 없었음
