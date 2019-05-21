@@ -34,3 +34,8 @@
 
 - Auth 페이지를 조금 만들었다
 - react hooks 를 쓰면 기존보다 좋다는데 useState 를 사용했다 아직까지는 뭐가좋은지 잘 모르겠다
+- 10분 영상 보니까 확실히 편하긴 하네
+
+#5.1 Footer and Auth UI part Two
+
+- Footer 를 추가했고, hooks 를 써서 state 에 따라 변하는 Auth 를 만듦
