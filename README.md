@@ -9,6 +9,7 @@
 
 - styled-component 에서 글로벌 스타일을 지정할수있게 제공해주나 보다
 - 글로벌스타일 세팅하고, 패딩마진 리셋하고, 자주쓸 테마 저장
+- App.js 에서 ThemeProvider, GlobalStyles 로 추가
 
 #4.2 React Router
 
@@ -17,10 +18,11 @@
 #4.3 Apollo Client
 
 - 아폴로를 연결했다
+- index.js 에서 ApolloProvider 로 Client.js 연결
 
 #4.4 First Hooks Query
 
-- Query 를 하나 만들었다
+- App.js 에 Query 를 하나 만들었다
 - graphql-tag 로 안해서 오류가 나서 애를 먹었다. 내 생각이 맞을 때도 있지만 자신이 없으면 맞아도 행동에 옮기지 못하는구나
 - 기존에 하던 방법과는 달리 useQuery 를 사용하여 가져왔다
 - isLoggedIn 을 @client 로 해서 index.js 에서 받은 client 를 가지고오네
@@ -34,11 +36,12 @@
 
 - Auth 페이지를 조금 만들었다
 - react hooks 를 쓰면 기존보다 좋다는데 useState 를 사용했다 아직까지는 뭐가좋은지 잘 모르겠다
-- 10분 영상 보니까 확실히 편하긴 하네
+- 유투브 10분 훅스 설명 영상 보니까 확실히 편하긴 하네
 
 #5.1 Footer and Auth UI part Two
 
-- Footer 를 추가했고, hooks 를 써서 state 에 따라 변하는 Auth 를 만듦
+- Footer 를 추가했다
+- hooks 를 써서 state 에 따라 변하는 Auth 를 만듦
 
 #5.2 Footer and Auth UI part Three
 
@@ -53,3 +56,16 @@
 
 - type Prop 도 추가하니 password, email type 정말 간편하게 설정가능하네
 - 기존의 react 를 잘 모르니 나아진점을 모르는 거 일수도 있음, 기존이 더 깔끔해보이는데 나는
+
+#5.4 requestSecret Mutation and Refactor
+
+- 드디어 Container, Presenter 나누는 기준을 알았다
+- Container 는 State, Hooks, Data 들 Presenter 는 Css, Components 들
+- 그리고 기존이 깔끔해 보인다 했는데, 기존이 Container/Presenter 형태인데 hooks 를 계속 쓸수 있는거임
+- 고로 hooks 를 안쓸 이유가 없어 보인다
+- 4분 부터 쿼리 추가
+- onLogin 을 onSubmit 에 추가해서 Log In 버튼을 눌러도 default 가 안되게 막음
+- AuthQueries 에 LOG_IN 을 추가하였음
+- 그리고 form 에서 submit 할 때 requestSecret mutation 을 실행하게 끔 함
+- https://github.com/trojanowski/react-apollo-hooks (useMution) 참고
+
