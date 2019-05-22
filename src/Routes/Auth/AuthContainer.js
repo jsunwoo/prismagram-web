@@ -1,37 +1,72 @@
 import React, { useState } from "react";
 import AuthPresenter from "./AuthPresenter";
 import useInput from "../../Hooks/useInput";
-import { LOG_IN } from "./AuthQueries";
+import { LOG_IN, CREAT_ACCOUNT } from "./AuthQueries";
 import { useMutation } from "react-apollo-hooks";
+import { toast } from "react-toastify";
 
 export default () => {
   const [action, setAction] = useState("logIn");
-  const userid = useInput("");
+
+  const email = useInput("");
   const username = useInput("");
-  const fullname = useInput("");
+  const firstname = useInput("");
+  const lastname = useInput("");
   // const password = useInput("");
+
   const requestSecret = useMutation(LOG_IN, {
-    variables: { email: userid.value }
+    update: (_, data) => {
+      const { requestSec } = data;
+      if (!requestSec) {
+        toast.error("You don't have an account yet, create one");
+        setTimeout(() => setAction("signUp"), 5000);
+      }
+    },
+    variables: { email: email.value }
+  });
+  const createAccount = useMutation(CREAT_ACCOUNT, {
+    variables: {
+      email: email.value,
+      username: username.value,
+      firstname: firstname.value,
+      lastname: lastname.value
+    }
   });
 
-  const onLogin = e => {
+  const onSubmit = e => {
     e.preventDefault();
-    if (userid !== "") {
-      requestSecret();
+    if (action === "logIn") {
+      if (email !== "") {
+        requestSecret();
+      } else {
+        toast.error("Email is required");
+      }
+    } else if (action === "signUp") {
+      if (
+        email.value !== "" &&
+        username.value !== "" &&
+        firstname.value !== "" &&
+        lastname.value !== ""
+      ) {
+        createAccount();
+      } else {
+        toast.error("All fields are required");
+      }
     }
   };
 
-  console.log(userid, username, fullname);
+  console.log(email, username, firstname, lastname);
 
   return (
     <AuthPresenter
       action={action}
       setAction={setAction}
-      userid={userid}
+      email={email}
       username={username}
-      fullname={fullname}
+      firstname={firstname}
+      lastname={lastname}
       // password={password}
-      onLogin={onLogin}
+      onSubmit={onSubmit}
     />
   );
 };

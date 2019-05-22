@@ -30,7 +30,7 @@
 
 - 그리고 GlobalStyle 몇개 추가함
 
-#5 Frontend: Authorization Routes
+#5 Frontend: Authorization Routes (~23)
 
 #5.0 Auth Route UI part One
 
@@ -60,7 +60,7 @@
 #5.4 requestSecret Mutation and Refactor
 
 - 드디어 Container, Presenter 나누는 기준을 알았다
-- Container 는 State, Hooks, Data 들 Presenter 는 Css, Components 들
+- Container 는 State, Hooks, Data (JS) 들 Presenter 는 Css, Components (HTML, CSS) 들
 - 그리고 기존이 깔끔해 보인다 했는데, 기존이 Container/Presenter 형태인데 hooks 를 계속 쓸수 있는거임
 - 고로 hooks 를 안쓸 이유가 없어 보인다
 - 4분 부터 쿼리 추가
@@ -69,3 +69,18 @@
 - 그리고 form 에서 submit 할 때 requestSecret mutation 을 실행하게 끔 함
 - https://github.com/trojanowski/react-apollo-hooks (useMution) 참고
 
+#5.5 Toastify and createAccount Mutation
+
+- App.js 에 ToastContainer 를 추가하였고 왼쪽 아래에 position 을 설정함
+- useMutation 는 update 함수가 있는데 watch 랑 비슷하게 쿼리 실행될때 실행되는 함수
+- requestSecret 에 update 를 추가하였다
+- 그리고 update 에서 받아온 값으로 오류 처리를 해주었다
+- 시간 지나면 자동으로 Sign up 화면으로 바꿔주는 처리도 해줌
+- CREAT_ACCOUNT 라는 mutation 을 하나 만듦
+- onLogin 함수를 onSubmit 으로 바꾸고 login, signup 버튼 두개를 처리해주기로 함
+- Html5 에 필드 필수입력 기능이 있는데도 불구하고 toast 로 에러처리를 하는걸 보며 감명받았음..
+
+#6 Frontend: Header Component (30m) 24
+#7 Frontend: Feed (105m) 25, 26, 27, 28
+#8 Frontend: Search (60m) 29, 30
+#9 Frontend: Profile (30m) 31
