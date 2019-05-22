@@ -80,6 +80,28 @@
 - onLogin 함수를 onSubmit 으로 바꾸고 login, signup 버튼 두개를 처리해주기로 함
 - Html5 에 필드 필수입력 기능이 있는데도 불구하고 toast 로 에러처리를 하는걸 보며 감명받았음..
 
+#5.6 createAccount Mutation part Two
+
+- requestSecret, createAccount 를 비동기로 바꾸고 오류 처리를 해주었다
+- 백엔드에서 throw Error 를 해주니 catch 에서 오류를 잘 잡아서 toast 로 보여주는걸 확인했음
+
+- requestSecret 에 있는 update 함수를 없애고 onSubmit 함수 안에서 처리해주었다
+- update 함수는 주로 cache 를 update 할 때 사용한다고 한다 (?)
+- 즉, Client.js 에 있는 defaults 를 update 할 때 (그럼 client 의 defaults 가 cache 란 소린가?)
+- Apollo Client 에 access 해야 할때 update 함수를 사용한다
+- 고로 우리는 Apollo Client 에 접근 할 필요가 없어서 onSubmit 에서 data 값을 가져온 뒤에 처리해주었다
+
+- 오류가 났었는데 requestSecret 를 data: { requestSecret } 로 바꿔주니 해결되었다
+- 이런 사소한 디테일은 어떻게 혼자 해결하지? 솔직히 혼자 해결하려면 몇시간은 걸렸을 건데.. 결국엔 경험이 중요한가보다
+
+- 백에서 createAccount API username 이 존재하는지 확인하는 코드를 넣었다
+- 그리고 있다면 에러를 던져주기로 했다
+- 니코도 버그가 많아서 강의를 끊고 다음 영상으로 넘어가는데 저 위 버그는 해결한 것 같은데?
+- sendmailer 는 나도 안된다 왜 안오는지 모르겠음! ㅡ ㅡ
+
+
+
+
 #6 Frontend: Header Component (30m) 24
 #7 Frontend: Feed (105m) 25, 26, 27, 28
 #8 Frontend: Search (60m) 29, 30
