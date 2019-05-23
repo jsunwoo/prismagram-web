@@ -117,6 +117,31 @@
 - 이유는 confirm action 을 하나 더 추가해서
 - 그리고 reqestSecret 성공하면 confirmSecret form 으로 화면을 넘겨주었다
 
+#5.8 confirmSecret + Log In Mutation
+
+- 백엔드 createAccount 에서 username 뿐만 아니라 email 도 기존에 있는지 체크해줌
+
+- confirm 상태 (action) 에서는 밑에 박스를 안보이게 해주었다
+
+- CONFIRM_SECRET mutation 을 만들었다
+- 그리고 AuthContainer 에서 토큰값을 받아와 confirmSecret(지금은 token)에 저장하였다
+
+- mutation 을 하나 더 만들었는데 Client 에서 가져와서 만드는 법을 보여주었다
+- LOCAL_LOG_IN 이고 local 에 저장하는 것임, Apollo note 강의가 이거랑 관련있음
+- localLogInMutation 처럼 variable 을 나중에 넣어줄 수 있다 (기존것은 mutation 생성할 때 넣어줌)
+- requestSecret, confirmSecret, localLogin 까지 문제없이 실행됨
+- localLogin 이 실행되니 isLoggedIn 이 true 가 되어 Router 에서 Feed.js 로 Switch 됐다
+- Login 성공!!
+
+- 이제 hooks 의 위대함이 보이는데, 지금 mutation 이 4개 인데 이게 hook 없이하려면
+- <Mutation><Mutation><Mutation><Mutation><Mutation><Mutation><Mutation><Mutation>
+- 이렇게 4개를 중첩해서 써야한다.. 이제야 알겠다!
+
+- token 이 undefined 일 때 Error 를 throw 해주기로 했다
+- 그러면 아래있는 catch 가 error 를 잡아 실행될거임
+- 고생했다
+
+
 #6 Frontend: Header Component (30m) 24
 #7 Frontend: Feed (105m) 25, 26, 27, 28
 #8 Frontend: Search (60m) 29, 30
