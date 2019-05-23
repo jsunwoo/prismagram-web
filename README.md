@@ -99,8 +99,23 @@
 - 니코도 버그가 많아서 강의를 끊고 다음 영상으로 넘어가는데 저 위 버그는 해결한 것 같은데?
 - sendmailer 는 나도 안된다 왜 안오는지 모르겠음! ㅡ ㅡ
 
+#5.7 createAccount Mutation part Three
 
+- 위에 있었던 data: { requestSecret } 에 관한 의문이 조금 풀렸다
+- const requestSecret = await requestSecretMutation();
+- requestSecret 로그를 찍어보니 data: {request: false} 이렇게 나온다, 그러면 이해됨
+- const { requestSecret } = await requestSecretMutation();
+- 그런데 또 이렇게 찍으면 안나온다 !! undefined 로 나옴
+- {} 를 쓸때 안쓸때의 차이를 알고싶다! () 도
 
+- requestSecret true 일 경우를 처리해주었다
+
+- firstname, lastname 이 안들어가서 봤더니 n을 소문자로 써서 안들어 갔었음
+- 여러가지 시도를 해봤는데.. 그냥 맞춰서 보내는게 낫겠다
+
+- form 을 나누는 방식을 : 에서 action === "logIn" && () 이걸로 바꿨다
+- 이유는 confirm action 을 하나 더 추가해서
+- 그리고 reqestSecret 성공하면 confirmSecret form 으로 화면을 넘겨주었다
 
 #6 Frontend: Header Component (30m) 24
 #7 Frontend: Feed (105m) 25, 26, 27, 28

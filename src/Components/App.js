@@ -32,7 +32,7 @@ export default () => {
         <GlobalStyles />
         <AppRouter isLoggedIn={isLoggedIn} />
         <Footer />
-        <ToastContainer popsition={toast.POSITION.BOTTOM_LEFT} />
+        <ToastContainer position={toast.POSITION.BOTTOM_LEFT} />
       </Wrapper>
     </ThemeProvider>
   );
