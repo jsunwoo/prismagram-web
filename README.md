@@ -141,8 +141,18 @@
 - 그러면 아래있는 catch 가 error 를 잡아 실행될거임
 - 고생했다
 
+#6 Frontend: Header Component (30m)
 
-#6 Frontend: Header Component (30m) 24
-#7 Frontend: Feed (105m) 25, 26, 27, 28
-#8 Frontend: Search (60m) 29, 30
-#9 Frontend: Profile (30m) 31
+#6.0 Header UI
+
+- Header 를 만들었다
+- 카카오톡 클론과 크게 다를게 없구나 괜히 쫄지말자
+- 인상깊었던건 아이콘까지 컴포넌트르 재사용하는 것.. 리스펙
+- 그나저나 Input 에 className 프롭은 왜 추가한거지?
+- 곰곰히 니콜라스가 없었다면? 이라는 생각을 해봤는데 실력을 어떻게 늘릴까 고민해봤는데
+- 결국엔 코딩실력은 구글링 실력인것같다.. 고로 영어실력과 비례할듯 영어로 된 정보가 훨씬 방대하니
+- 이 모든전제는 실력 좋은 사람이 자신이 갖고있는 정보를 공유하는다는 전제 나도 나중에 실력이 늘면 김형석같은 사람이 되자
+
+#7 Frontend: Feed (105m)
+#8 Frontend: Search (60m)
+#9 Frontend: Profile (30m)
