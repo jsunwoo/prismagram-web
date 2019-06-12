@@ -7,7 +7,7 @@ import { HashRouter as Router } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import GlobalStyles from "../Styles/GlobalStyles";
 import Theme from "../Styles/Theme";
-import AppRouter from "./Router";
+import Routes from "./Routes";
 import Footer from "./Footer";
 import Header from "./Header";
 
@@ -35,7 +35,7 @@ export default () => {
         <Router>
           <Header />
           <Wrapper>
-            <AppRouter isLoggedIn={isLoggedIn} />
+            <Routes isLoggedIn={isLoggedIn} />
             <Footer />
           </Wrapper>
         </Router>
